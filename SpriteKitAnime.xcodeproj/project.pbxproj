@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA19E7FC1A07B47A00358E84 /* DDEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19E7F11A07B47A00358E84 /* DDEditor.m */; };
+		AA19E7FD1A07B47A00358E84 /* MyArgInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19E7F31A07B47A00358E84 /* MyArgInputView.m */; };
+		AA19E7FE1A07B47A00358E84 /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19E7F51A07B47A00358E84 /* MyButton.m */; };
+		AA19E7FF1A07B47A00358E84 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19E7F71A07B47A00358E84 /* MyCell.m */; };
+		AA19E8001A07B47A00358E84 /* MySourceData.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19E7F91A07B47A00358E84 /* MySourceData.m */; };
+		AA19E8011A07B47A00358E84 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19E7FB1A07B47A00358E84 /* MyTableViewController.m */; };
 		AA1B10CE19E6DC3A0075BB66 /* MyObjectBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B10CD19E6DC3A0075BB66 /* MyObjectBase.swift */; };
 		AA1E959E19D8424C00A63694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E959D19D8424C00A63694 /* AppDelegate.swift */; };
 		AA1E95A019D8424C00A63694 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E959F19D8424C00A63694 /* ViewController.swift */; };
@@ -42,6 +48,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA19E7F01A07B47A00358E84 /* DDEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDEditor.h; sourceTree = "<group>"; };
+		AA19E7F11A07B47A00358E84 /* DDEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDEditor.m; sourceTree = "<group>"; };
+		AA19E7F21A07B47A00358E84 /* MyArgInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyArgInputView.h; sourceTree = "<group>"; };
+		AA19E7F31A07B47A00358E84 /* MyArgInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyArgInputView.m; sourceTree = "<group>"; };
+		AA19E7F41A07B47A00358E84 /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
+		AA19E7F51A07B47A00358E84 /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
+		AA19E7F61A07B47A00358E84 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
+		AA19E7F71A07B47A00358E84 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
+		AA19E7F81A07B47A00358E84 /* MySourceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySourceData.h; sourceTree = "<group>"; };
+		AA19E7F91A07B47A00358E84 /* MySourceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySourceData.m; sourceTree = "<group>"; };
+		AA19E7FA1A07B47A00358E84 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
+		AA19E7FB1A07B47A00358E84 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
+		AA19E8021A07B53900358E84 /* SpriteKitAnime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpriteKitAnime-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA1B10CD19E6DC3A0075BB66 /* MyObjectBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyObjectBase.swift; sourceTree = "<group>"; };
 		AA1E959819D8424B00A63694 /* SpriteKitAnime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteKitAnime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1E959C19D8424C00A63694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +108,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA19E7EF1A07B47A00358E84 /* DDEditor */ = {
+			isa = PBXGroup;
+			children = (
+				AA19E7F01A07B47A00358E84 /* DDEditor.h */,
+				AA19E7F11A07B47A00358E84 /* DDEditor.m */,
+				AA19E7F21A07B47A00358E84 /* MyArgInputView.h */,
+				AA19E7F31A07B47A00358E84 /* MyArgInputView.m */,
+				AA19E7F41A07B47A00358E84 /* MyButton.h */,
+				AA19E7F51A07B47A00358E84 /* MyButton.m */,
+				AA19E7F61A07B47A00358E84 /* MyCell.h */,
+				AA19E7F71A07B47A00358E84 /* MyCell.m */,
+				AA19E7F81A07B47A00358E84 /* MySourceData.h */,
+				AA19E7F91A07B47A00358E84 /* MySourceData.m */,
+				AA19E7FA1A07B47A00358E84 /* MyTableViewController.h */,
+				AA19E7FB1A07B47A00358E84 /* MyTableViewController.m */,
+			);
+			path = DDEditor;
+			sourceTree = "<group>";
+		};
 		AA1E958F19D8424B00A63694 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +149,7 @@
 		AA1E959A19D8424B00A63694 /* SpriteKitAnime */ = {
 			isa = PBXGroup;
 			children = (
+				AA19E8021A07B53900358E84 /* SpriteKitAnime-Bridging-Header.h */,
 				AA1E959D19D8424C00A63694 /* AppDelegate.swift */,
 				AA1E959F19D8424C00A63694 /* ViewController.swift */,
 				AA1E95BF19D8579C00A63694 /* MyScene.swift */,
@@ -118,6 +157,7 @@
 				AAAD86F219F2516D00CF1587 /* GoalScene.sks */,
 				AAAD86F319F2516D00CF1587 /* spark.png */,
 				AA53CDC919EBEC56003D37D6 /* MyInterpreter.swift */,
+				AA19E7EF1A07B47A00358E84 /* DDEditor */,
 				AAAD86ED19F23C6800CF1587 /* Object */,
 				AA1E95A119D8424C00A63694 /* Main.storyboard */,
 				AA1E95A419D8424C00A63694 /* Images.xcassets */,
@@ -284,14 +324,20 @@
 			files = (
 				AA202F0119DC26C900D13595 /* MyPlayer.swift in Sources */,
 				AA655E4319F2B108004CC9C3 /* MyWall.swift in Sources */,
+				AA19E8001A07B47A00358E84 /* MySourceData.m in Sources */,
 				AAAD86EF19F23DAD00CF1587 /* ObjectBuilder.swift in Sources */,
 				AA53CDCA19EBEC56003D37D6 /* MyInterpreter.swift in Sources */,
 				AA1E95A019D8424C00A63694 /* ViewController.swift in Sources */,
 				AAAD86F119F23DFC00CF1587 /* GameMaster.swift in Sources */,
+				AA19E7FD1A07B47A00358E84 /* MyArgInputView.m in Sources */,
 				AA1E959E19D8424C00A63694 /* AppDelegate.swift in Sources */,
 				AAA9C86D19E7A20500065A66 /* MyField.swift in Sources */,
+				AA19E7FF1A07B47A00358E84 /* MyCell.m in Sources */,
+				AA19E7FE1A07B47A00358E84 /* MyButton.m in Sources */,
 				AAA9C87119E806B200065A66 /* MyGoal.swift in Sources */,
+				AA19E7FC1A07B47A00358E84 /* DDEditor.m in Sources */,
 				AAA9C86F19E804AA00065A66 /* MyTree.swift in Sources */,
+				AA19E8011A07B47A00358E84 /* MyTableViewController.m in Sources */,
 				AA1B10CE19E6DC3A0075BB66 /* MyObjectBase.swift in Sources */,
 				AA1E95C019D8579C00A63694 /* MyScene.swift in Sources */,
 			);
@@ -419,6 +465,7 @@
 				INFOPLIST_FILE = SpriteKitAnime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/SpriteKitAnime-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -429,6 +476,7 @@
 				INFOPLIST_FILE = SpriteKitAnime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/SpriteKitAnime-Bridging-Header.h";
 			};
 			name = Release;
 		};

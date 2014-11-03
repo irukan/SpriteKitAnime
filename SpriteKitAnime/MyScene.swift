@@ -64,8 +64,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
         //MapData読み込み
         let dataPath = NSBundle.mainBundle().pathForResource("data2", ofType: "dat", inDirectory: "MapData")
 
-        let text = NSString.stringWithContentsOfFile(dataPath!, encoding: NSUTF8StringEncoding, error: nil)
-        
+        let text: String = String(contentsOfFile:dataPath!, encoding: NSUTF8StringEncoding, error: nil)!
         var indX:Int = 0
         var indY:Int = 0
         
@@ -302,7 +301,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     func highliteView(index: Int)
     {
         highliteRect.removeFromSuperview()
-        highliteRect.frame.origin = CGPointMake(0, CGFloat(12.0 + 12 * (index - 1 ) ))
+       // highliteRect.frame.origin = CGPointMake(0, CGFloat(12.0 + 12 * (index - 1 ) ))
         progAreaPtr.addSubview(highliteRect)
     }
 }
