@@ -80,9 +80,28 @@
     [self.view addSubview:argView];
 }
 
+
+-(void)setTableViewMode:(NSString*)viewMode setView:(UIView*)setView_in
+{
+    if ([viewMode isEqualToString:@"inputView"])
+    {
+        tblView.tableView.frame = CGRectMake(0, 0, self.width, self.height/1.3);
+        
+        [setView_in addSubview:tblView.tableView];
+        [setView_in sendSubviewToBack:tblView.tableView];
+    }
+    else if ([viewMode isEqualToString:@"debugView"])
+    {
+        tblView.tableView.frame = CGRectMake(0, ad.getSHeight, ad.getWWidth / 2.0, ad.getWHeight - ad.getSHeight);
+
+        [setView_in addSubview:tblView.tableView];
+        [setView_in sendSubviewToBack:tblView.tableView];
+    }
+}
+
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-   
+    [self dismissViewControllerAnimated:true completion:nil];
     //[ad.ddEditor.tblView setHighLighted:5 color:[UIColor redColor] isScroll:true];
     //tblView.tableView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     

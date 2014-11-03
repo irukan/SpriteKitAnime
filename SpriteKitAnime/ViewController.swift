@@ -23,6 +23,10 @@ class ViewController: UIViewController, UITextViewDelegate {
     var debugAreaPtr:UITextView!
     
     
+    override func viewWillAppear(animated: Bool) {
+        ad.ddEditor.setTableViewMode("debugView", setView: self.view)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,10 +46,19 @@ class ViewController: UIViewController, UITextViewDelegate {
         scene1.backgroundColor = SKColor.grayColor()
 
 
-        // program 記述領域
-        progAreaPtr = ad.progArea
-        progAreaPtr.delegate = self
-        self.view.addSubview(progAreaPtr)
+//        // program 記述領域
+//        progAreaPtr = ad.progArea
+//        progAreaPtr.delegate = self
+//        self.view.addSubview(progAreaPtr)
+        
+        // ddEditor テーブル表示
+        ad.ddEditor.setTableViewMode("debugView", setView: self.view)
+        
+        // ddEditorを覆う透明なCover
+        let ddEditorCover : UIButton = UIButton(frame: ad.ddEditor.tblView.tableView.frame)
+        ddEditorCover.addTarget(self, action: "pushCover:", forControlEvents: UIControlEvents.TouchDown)
+        self.view.addSubview(ddEditorCover)
+        
         
         // debug情報出力領域
         debugAreaPtr = ad.debugArea
@@ -57,6 +70,12 @@ class ViewController: UIViewController, UITextViewDelegate {
         
         self.view.addSubview(skView)
 
+    }
+    
+    func pushCover(sender:UIButton)
+    {
+        ad.ddEditor.setTableViewMode("inputView", setView: ad.ddEditor.view)
+        self.presentViewController(ad.ddEditor, animated: true, completion: nil)
     }
 
 
@@ -97,22 +116,22 @@ class ViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    // タッチイベント
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        
-        for touch: AnyObject in touches{
-            
-            progAreaPtr.resignFirstResponder()
-            
-            let location = touch.locationInNode(scene1)
-            
-            //var nodeName = scene1.nodeAtPoint(location).name!
-            //println("Node" + scene1.nodeAtPoint(location).name!)
-            
-        }
-        
-        
-    }
+//    // タッチイベント
+//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+//        
+//        for touch: AnyObject in touches{
+//            
+//            progAreaPtr.resignFirstResponder()
+//            
+//            let location = touch.locationInNode(scene1)
+//            
+//            //var nodeName = scene1.nodeAtPoint(location).name!
+//            //println("Node" + scene1.nodeAtPoint(location).name!)
+//            
+//        }
+//        
+//        
+//    }
 
 }
 

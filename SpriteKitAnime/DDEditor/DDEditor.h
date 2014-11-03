@@ -17,12 +17,16 @@
     
     // Appdelegate from swift
     AppDelegate *ad;
+    
+
 }
 
 -(id)initWithFrame:(CGRect)frame;
 +(DDEditor*)getViewController:(UIView*)self_in;
 -(MyTableViewController*)getTable;
 -(void)argInputView:(NSString*)cmdType cellIndex:(int)cellIndex_in;
+-(void)setTableViewMode:(NSString*)viewMode setView:(UIView*)setView_in;
+
 
 @property (strong,readonly)MyTableViewController* tblView;
 @property CGFloat width;

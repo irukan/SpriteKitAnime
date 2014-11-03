@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var progArea: UITextView!
+    
+    var ddEditor: DDEditor!
     var debugArea: UITextView!
     
     var StatusBar:CGFloat!
@@ -29,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var interpreter:MyInterpreter!
     
     var gmMaster:GameMaster!
+    
     
     func initImgArr()
     {
@@ -76,6 +79,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         progArea.layer.cornerRadius = 4
         progArea.keyboardType = UIKeyboardType.ASCIICapable
         
+        // DDEditor
+        ddEditor = DDEditor(frame: window!.frame)
+        
         // debugArea
         debugArea = UITextView(frame: CGRectMake(WWidth / 2.0, SHeight, WWidth / 2.0, WHeight - SHeight))
         debugArea.layer.borderWidth = 2
@@ -114,6 +120,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+
+    func getWWidth()->CGFloat
+    {
+        return self.WWidth
+    }
+    func getWHeight()->CGFloat
+    {
+        return self.WHeight
+    }
+    func getSWidth()->CGFloat
+    {
+        return self.SWidth
+    }
+    func getSHeight()->CGFloat
+    {
+        return self.SHeight
+    }
+    
 
 }
 
