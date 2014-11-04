@@ -20,7 +20,10 @@
 -(void)setDataByIndex:(int)index cmd:(NSString*)cmd_in arg:(NSString*)arg_in;
 -(void)setDataByIndexWithEndBlock:(int)index cmd:(NSString *)cmd_in arg:(NSString *)arg_in;
 
--(void)setHighLighted:(int)index color:(UIColor*)color_in isScroll:(bool)isScroll_in;
+-(void)deletAtIndex:(int)index;
+-(void)clear;
+
+-(void)setHighLighted:(NSInteger)index color:(UIColor*)color_in isScroll:(bool)isScroll_in;
 
 
 

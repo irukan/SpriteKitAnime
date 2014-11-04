@@ -13,7 +13,6 @@ import SpriteKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var progArea: UITextView!
     
     var ddEditor: DDEditor!
     var debugArea: UITextView!
@@ -72,12 +71,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SWidth = WWidth
         SHeight = WWidth
         
-        // progArea
-        progArea = UITextView(frame: CGRectMake(0, SHeight, WWidth / 2.0, WHeight - SHeight))
-        progArea.layer.borderWidth = 2
-        progArea.layer.borderColor = UIColor.blueColor().CGColor
-        progArea.layer.cornerRadius = 4
-        progArea.keyboardType = UIKeyboardType.ASCIICapable
         
         // DDEditor
         ddEditor = DDEditor(frame: window!.frame)

@@ -26,8 +26,6 @@
 @end
 
 
-
-
 @implementation MySourceData
 
 -(int)count
@@ -180,6 +178,35 @@
     }
     
     return ret;
+}
+
+-(void)deletAtIndex:(int)index
+{
+    NSString *getCmd = [self getCmdByIndex:index];
+    
+    if (([getCmd isEqualToString:@"if"]) || ([getCmd isEqualToString:@"while"]) )
+    {
+        [data removeObjectAtIndex:index];
+        //endも消す
+        int indexSearch = index;
+        
+        while (!([[self getCmdByIndex:indexSearch] isEqualToString:@"end"]))
+        {
+            indexSearch ++;
+        }
+        [data removeObjectAtIndex:indexSearch];
+    }
+    else
+    {
+        [data removeObjectAtIndex:index];
+    }
+
+}
+
+-(void)clear
+{
+    [data removeAllObjects];
+    [self addBlankLine:10];
 }
 
 @end

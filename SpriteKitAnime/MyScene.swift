@@ -22,9 +22,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     var upTime:CFTimeInterval!
     var lastUpdate:CFTimeInterval!
     
-    var progAreaPtr:UITextView!
     var debugAreaPtr:UITextView!
-    var highliteRect:UILabel!
     
     var isAnimated:Bool!
     
@@ -40,14 +38,10 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
         upTime = 0
         lastUpdate = 0
         
-        // ViewControllerのprogArea, debugArea
-        progAreaPtr = ad.progArea
+        // ViewControllerの, debugArea
         debugAreaPtr = ad.debugArea
         
-        highliteRect = UILabel(frame: CGRectMake(0, 0, progAreaPtr.frame.width, 12))
-        highliteRect.backgroundColor = UIColor.yellowColor()
-        highliteRect.alpha = 0.5
-        
+
         isAnimated = false
         
         // sellの分割数は15で固定。今後はmapDataから読み込むようにする
@@ -197,7 +191,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
                 //progLine = progLine + 1
                 
                 let cmd = ad.interpreter.getCmd()
-                highliteView(ad.interpreter.nowRaw)
+                ad.ddEditor.tblView.setHighLighted(ad.interpreter.nowRaw - 1 , color: UIColor.yellowColor(), isScroll: true)
                 
                 if(cmd != "end")
                 {
@@ -206,7 +200,6 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
                 else
                 {
                     isAnimated = false
-                    highliteRect.removeFromSuperview()
                 }
             }
             
@@ -298,10 +291,5 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
         debugAreaPtr.text = setTxt
     }
     
-    func highliteView(index: Int)
-    {
-        highliteRect.removeFromSuperview()
-       // highliteRect.frame.origin = CGPointMake(0, CGFloat(12.0 + 12 * (index - 1 ) ))
-        progAreaPtr.addSubview(highliteRect)
-    }
+
 }

@@ -151,16 +151,16 @@ class MyInterpreter
     {
         switch (arg)
             {
-                case "r":
+                case "→":
                     decodeLine.addObject("turnR")
                     break
-                case "l":
+                case "←":
                     decodeLine.addObject("turnL")
                     break
-                case "u":
+                case "↑":
                     decodeLine.addObject("turnU")
                     break
-                case "d":
+                case "↓":
                     decodeLine.addObject("turnD")
                     break
                 default:

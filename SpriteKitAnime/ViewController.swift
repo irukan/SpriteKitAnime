@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 
-class ViewController: UIViewController, UITextViewDelegate {
+class ViewController: UIViewController, DDEditorDelegate {
 
     // Appdelegate
     var ad:AppDelegate!
@@ -19,7 +19,6 @@ class ViewController: UIViewController, UITextViewDelegate {
     var skView:SKView!
     var scene1:MyScene!
     
-    var progAreaPtr:UITextView!
     var debugAreaPtr:UITextView!
     
     
@@ -45,14 +44,10 @@ class ViewController: UIViewController, UITextViewDelegate {
         scene1 = MyScene(size: CGSizeMake(ad.SWidth, ad.SHeight))
         scene1.backgroundColor = SKColor.grayColor()
 
-
-//        // program 記述領域
-//        progAreaPtr = ad.progArea
-//        progAreaPtr.delegate = self
-//        self.view.addSubview(progAreaPtr)
         
         // ddEditor テーブル表示
         ad.ddEditor.setTableViewMode("debugView", setView: self.view)
+        ad.ddEditor.delegate = self
         
         // ddEditorを覆う透明なCover
         let ddEditorCover : UIButton = UIButton(frame: ad.ddEditor.tblView.tableView.frame)
@@ -78,36 +73,16 @@ class ViewController: UIViewController, UITextViewDelegate {
         self.presentViewController(ad.ddEditor, animated: true, completion: nil)
     }
 
-
-    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
-        
-        UIView.animateWithDuration(1.0, animations: {
-                self.skView.alpha = 0.0
-                self.debugAreaPtr.frame = CGRectMake(self.ad.WWidth / 2.0, self.ad.WHeight, self.ad.WWidth / 2.0,
-                    self.ad.WHeight - self.ad.SHeight)
-                self.progAreaPtr.frame = CGRectMake(0, self.ad.StatusBar, self.ad.SWidth, self.ad.SHeight - 30)
-        })
-
-        return true
-    }
-    
-    func textViewShouldEndEditing(textView: UITextView) -> Bool {
-        
-        UIView.animateWithDuration(0.8, animations: {
-                self.skView.alpha = 1.0
-                self.debugAreaPtr.frame = CGRectMake(self.ad.WWidth / 2.0, self.ad.SHeight, self.ad.WWidth / 2.0,
-                    self.ad.WHeight - self.ad.SHeight)
-                self.progAreaPtr.frame = CGRectMake(0, self.ad.SHeight, self.ad.WWidth / 2.0 , self.ad.WHeight - self.ad.SHeight)
-        })
+    //delegate実装
+    func editFinish() {
         scene1.isAnimated = true
- 
-        let strArr:NSArray = textView.text.componentsSeparatedByString("\n")
-
+        
+        let strArr:NSArray = ad.ddEditor.tblView.getSourceData()
+        
         self.ad.interpreter.setRawLine(strArr)
         
         self.ad.gmMaster.execCmd()
-        
-        return true
+
     }
     
     
@@ -121,7 +96,6 @@ class ViewController: UIViewController, UITextViewDelegate {
 //        
 //        for touch: AnyObject in touches{
 //            
-//            progAreaPtr.resignFirstResponder()
 //            
 //            let location = touch.locationInNode(scene1)
 //            

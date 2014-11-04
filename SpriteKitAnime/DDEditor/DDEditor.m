@@ -19,6 +19,7 @@
 
 @implementation DDEditor
 
+@synthesize delegate;
 @synthesize tblView;
 
 -(id)initWithFrame:(CGRect)frame
@@ -51,7 +52,8 @@
 }
 
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
@@ -60,12 +62,24 @@
     
     [self.view addSubview:tblView.tableView];
     
+    
+    // Exec btn
+    UIButton* execBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.width*0.1, self.height -30, self.width* 0.8, 30)];
+    execBtn.layer.borderColor = [UIColor brownColor].CGColor;
+    execBtn.layer.borderWidth = 4;
+    execBtn.layer.cornerRadius = 5.5f;
+    [execBtn setTitle:@"Execute" forState:UIControlStateNormal];
+    [execBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [execBtn addTarget:self action:@selector(pushExec:) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:execBtn];
+    
+    
     //後でGeneratorクラス作る
     [self.view addSubview:[[MyButton alloc]init:CGPointMake(self.width*0.25, self.height - 100 ) title:@"walk"]];
     [self.view addSubview:[[MyButton alloc]init:CGPointMake(self.width*0.75, self.height - 100 ) title:@"turn"]];
     [self.view addSubview:[[MyButton alloc]init:CGPointMake(self.width*0.25, self.height - 50 ) title:@"if"]];
     [self.view addSubview:[[MyButton alloc]init:CGPointMake(self.width*0.75, self.height - 50 ) title:@"while"]];
-    }
+}
 
 
 -(MyTableViewController*)getTable
@@ -99,9 +113,20 @@
     }
 }
 
+- (void) pushExec:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(editFinish)]) {
+        [self.delegate editFinish];
+    }
+    
+    [self dismissViewControllerAnimated:true completion:nil];
+   
+}
+
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self dismissViewControllerAnimated:true completion:nil];
+    
+  
     //[ad.ddEditor.tblView setHighLighted:5 color:[UIColor redColor] isScroll:true];
     //tblView.tableView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     

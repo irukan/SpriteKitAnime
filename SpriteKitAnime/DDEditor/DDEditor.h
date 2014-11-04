@@ -11,6 +11,14 @@
 
 @class AppDelegate;
 
+// デリゲートを定義
+@protocol DDEditorDelegate <NSObject>
+
+// デリゲートメソッドを宣言
+- (void)editFinish;
+
+@end
+
 @interface DDEditor : UIViewController
 {
     MyTableViewController *tblView;
@@ -20,6 +28,9 @@
     
 
 }
+
+// deleget property
+@property (nonatomic, assign) id<DDEditorDelegate> delegate;
 
 -(id)initWithFrame:(CGRect)frame;
 +(DDEditor*)getViewController:(UIView*)self_in;

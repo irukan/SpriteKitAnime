@@ -32,6 +32,8 @@
 -(int)getScopeLevelByIndex:(int)index;
 
 -(void)resetScopeLevel;
+-(void)deletAtIndex:(int)index;
+-(void)clear;
 
 -(NSMutableArray*)getSourceData;
 @end

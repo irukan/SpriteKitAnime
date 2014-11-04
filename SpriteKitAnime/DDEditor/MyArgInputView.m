@@ -61,12 +61,20 @@
                 break;
         }
         
+        // clearボタン
+        UIButton* clearBtn = [[UIButton alloc]initWithFrame:CGRectMake(size_in.width*0.5, size_in.height*0.5, 100,30)];
+        clearBtn.layer.borderColor = [UIColor redColor].CGColor;
+        clearBtn.layer.borderWidth = 4;
+        clearBtn.layer.cornerRadius = 5.5f;
+        [clearBtn setTitle:@"Clear" forState:UIControlStateNormal];
+        [clearBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [clearBtn addTarget:self action:@selector(pushClear:) forControlEvents:UIControlEventTouchDown];
+        [self addSubview:clearBtn];
         
     }
     
     return self;
 }
-
 
 //表示されるとき
 -(void)didMoveToSuperview
@@ -147,7 +155,7 @@
 
 -(void) viewFor_TypeIf
 {
-    NSArray *strAr = @[@"Tree", @"Wall", @"House"];
+    NSArray *strAr = @[@"tree", @"wall", @"House"];
     
     for(int i=0;i<3;i++)
     {
@@ -164,7 +172,7 @@
 
 - (void) btn_TouchIfBtn:(UIButton*)btn
 {
-     NSArray *strAr = @[@"Tree", @"Wall", @"House"];
+     NSArray *strAr = @[@"tree", @"wall", @"House"];
     
     [tblView setDataByIndex:m_cellIndex cmd:@"" arg:[strAr objectAtIndex:btn.tag]];
     
@@ -173,7 +181,7 @@
 
 -(void) viewFor_TypeWhile
 {
-    NSArray *strAr = @[@"Tree", @"Wall", @"House"];
+    NSArray *strAr = @[@"tree", @"wall", @"House"];
     
     for(int i=0;i<3;i++)
     {
@@ -190,10 +198,16 @@
 
 - (void) btn_TouchWhileBtn:(UIButton*)btn
 {
-    NSArray *strAr =  @[@"Tree", @"Wall", @"House"];
+    NSArray *strAr =  @[@"tree", @"wall", @"House"];
     
     [tblView setDataByIndex:m_cellIndex cmd:@"" arg:[strAr objectAtIndex:btn.tag]];
     
+    [self removeFromSuperview];
+}
+
+-(void) pushClear:(id)sender
+{
+    [tblView deletAtIndex:m_cellIndex];
     [self removeFromSuperview];
 }
 
