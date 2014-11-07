@@ -79,19 +79,21 @@
     
     if(cellIndex != -1)
     {
-                
-        if ( ([m_title isEqualToString:@"while"]) || ([m_title isEqualToString:@"if"]) )
+        //既にコマンド代入してあったらなにもしない
+        if ([[tblView getCmdByIndex:cellIndex] length] == 0)
         {
-            [tblView setDataByIndexWithEndBlock:cellIndex cmd:m_title arg:@""];
+            if ( ([m_title isEqualToString:@"while"]) || ([m_title isEqualToString:@"if"]) )
+            {
+                [tblView setDataByIndexWithEndBlock:cellIndex cmd:m_title arg:@""];
+            }
+            else
+            {
+                [tblView setDataByIndex:cellIndex cmd:m_title arg:@""];
+            }
+            
+            // ArgInputWindow表示
+            [rootView argInputView:m_title cellIndex:cellIndex];
         }
-        else
-        {
-            [tblView setDataByIndex:cellIndex cmd:m_title arg:@""];
-        }
-        
-        // ArgInputWindow
-        [rootView argInputView:m_title cellIndex:cellIndex];
-
     }
     
     //初期位置に戻す

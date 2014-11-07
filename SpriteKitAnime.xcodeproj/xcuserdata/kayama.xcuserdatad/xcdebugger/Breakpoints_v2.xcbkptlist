@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpriteKitAnime/MyPlayer.swift"
-            timestampString = "434635605.10372"
+            timestampString = "436972563.487831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "init(cellSize:indexX:indexY:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -262,11 +262,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpriteKitAnime/MyPlayer.swift"
-            timestampString = "435075849.565188"
+            timestampString = "436972563.487831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "getFrontObject()"
             landmarkType = "5">
          </BreakpointContent>
@@ -404,11 +404,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpriteKitAnime/DDEditor/MySourceData.m"
-            timestampString = "436807876.884973"
+            timestampString = "436974584.245981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "-deletAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -420,11 +420,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpriteKitAnime/DDEditor/MySourceData.m"
-            timestampString = "436807876.884973"
+            timestampString = "436974584.245981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "-clear"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpriteKitAnime/DDEditor/MySourceData.m"
+            timestampString = "436974584.245981"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "-deletAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -436,11 +452,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpriteKitAnime/DDEditor/MySourceData.m"
-            timestampString = "436807876.884973"
+            timestampString = "436974584.245981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "-deletAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -452,11 +468,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpriteKitAnime/DDEditor/MySourceData.m"
-            timestampString = "436807876.884973"
+            timestampString = "436974630.051631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "-deletAtIndex:"
             landmarkType = "5">
          </BreakpointContent>

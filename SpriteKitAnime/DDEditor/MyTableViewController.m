@@ -115,6 +115,17 @@
             
             //更新
             [self resetDataAndView];
+            
+            // endセルの場合、移動後に対応ペアがいなくなってたら元に戻す
+            if ( [[ sourceData getCmdByIndex:(int)toIndexPath.row] isEqualToString:@"end"])
+            {
+                if ( [[sourceData getArgByIndex:(int)toIndexPath.row] length] == 0)
+                {
+                    [sourceData exchangeData:(int)toIndexPath.row toIndex:(int)fromIndexPath.row];
+                    //更新
+                    [self resetDataAndView];
+                }
+            }
         }
     }
 }

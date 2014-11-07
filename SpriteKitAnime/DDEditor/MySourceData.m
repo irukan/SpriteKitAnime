@@ -59,7 +59,7 @@
 
 -(void)setData:(int)index cmd:(NSString*)cmd_in arg:(NSString*)arg_in
 {
-    if( !([cmd_in isEqualToString:@""]) )
+    if( [cmd_in length] != 0 )
     {
         [self setCmd:index cmd:cmd_in];
     }
@@ -165,7 +165,7 @@
             // endwhile, endif にする
             [ret addObject:[NSString stringWithFormat:@"%@%@", getCmd, getArg]];
         }
-        else if( [getCmd isEqualToString:@""] )
+        else if( [getCmd length] == 0 )
         {
             //空行
             [ret addObject:@""];
@@ -186,15 +186,24 @@
     
     if (([getCmd isEqualToString:@"if"]) || ([getCmd isEqualToString:@"while"]) )
     {
+        int getScopeLevel = [self getScopeLevelByIndex:index];
         [data removeObjectAtIndex:index];
+        //[self setData:index cmd:@"" arg:@""];
         //endも消す
         int indexSearch = index;
         
-        while (!([[self getCmdByIndex:indexSearch] isEqualToString:@"end"]))
+        while (true)
         {
-            indexSearch ++;
+            if (([[self getCmdByIndex:indexSearch] isEqualToString:@"end"]) &&
+                 ([self getScopeLevelByIndex:indexSearch]) == getScopeLevel)
+            {
+                break;
+            }
+                indexSearch ++;
         }
+        
         [data removeObjectAtIndex:indexSearch];
+        //[self setData:indexSearch cmd:@"" arg:@""];
     }
     else
     {

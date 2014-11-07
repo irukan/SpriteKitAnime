@@ -24,7 +24,13 @@ class MyPlayer: MyObjectBase {
     var m_direct:direction!
     
     var charImgArr:NSMutableArray!
-
+    
+    var frontImgTextures:NSArray!
+    var rightImgTextures:NSArray!
+    var backImgTextures:NSArray!
+    var leftImgTextures:NSArray!
+    
+    let playerSpeed:NSTimeInterval = 0.5
     
     func initCharArr(fileName:String, chipSize : CGSize, numX:Int, numY:Int)
     {
@@ -44,6 +50,11 @@ class MyPlayer: MyObjectBase {
             }
         
         }
+        
+        backImgTextures  = [charImgArr[0], charImgArr[1], charImgArr[2]] as NSArray
+        rightImgTextures = [charImgArr[3], charImgArr[4], charImgArr[5]] as NSArray
+        leftImgTextures  = [charImgArr[6], charImgArr[7], charImgArr[8]] as NSArray
+        frontImgTextures = [charImgArr[9], charImgArr[10], charImgArr[11]] as NSArray
     }
     
     init(cellSize:CGFloat, indexX:Int, indexY:Int)
@@ -168,7 +179,10 @@ class MyPlayer: MyObjectBase {
             return
         }
         
-        self.runAction(SKAction.moveByX(m_cell, y: 0, duration: 0.2))
+        let actions: NSArray = [SKAction.moveByX(m_cell, y: 0, duration: playerSpeed),
+                            SKAction.animateWithTextures(rightImgTextures, timePerFrame: playerSpeed/NSTimeInterval(rightImgTextures.count))]
+        
+        self.runAction(SKAction.group(actions))
 
     }
     func moveLeft()
@@ -178,7 +192,11 @@ class MyPlayer: MyObjectBase {
             return
         }
         
-        self.runAction(SKAction.moveByX(-m_cell, y: 0, duration: 0.2))
+        let actions: NSArray = [SKAction.moveByX(-m_cell, y: 0, duration: playerSpeed),
+            SKAction.animateWithTextures(leftImgTextures, timePerFrame: playerSpeed/NSTimeInterval(rightImgTextures.count))]
+        
+        self.runAction(SKAction.group(actions))
+
     }
     func moveUp()
     {
@@ -186,9 +204,11 @@ class MyPlayer: MyObjectBase {
         if (!isFrontTrough()){
             return
         }
+        let actions: NSArray = [SKAction.moveByX(0, y: m_cell, duration: playerSpeed),
+            SKAction.animateWithTextures(backImgTextures, timePerFrame: playerSpeed/NSTimeInterval(rightImgTextures.count))]
+        
+        self.runAction(SKAction.group(actions))
       
-        self.runAction(SKAction.moveByX(0, y: m_cell, duration: 0.2))
-
     }
     func moveDown()
     {
@@ -197,7 +217,11 @@ class MyPlayer: MyObjectBase {
             return
         }
 
-        self.runAction(SKAction.moveByX(0, y: -m_cell, duration: 0.2))
+        let actions: NSArray = [SKAction.moveByX(0, y: -m_cell, duration: playerSpeed),
+            SKAction.animateWithTextures(frontImgTextures, timePerFrame: playerSpeed/NSTimeInterval(rightImgTextures.count))]
+        
+        self.runAction(SKAction.group(actions))
+
     }
     
     // Command

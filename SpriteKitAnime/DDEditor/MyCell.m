@@ -91,7 +91,7 @@
     
     NSString *getCmd = [tblView getCmdByIndex:m_index];
     
-    if ( !([getCmd isEqualToString:@""]) && !([getCmd isEqualToString:@"end"]))
+    if ( !([getCmd length]==0) && !([getCmd isEqualToString:@"end"]))
     {
         // ArgInputWindow
         [rootView argInputView:getCmd cellIndex:m_index];
